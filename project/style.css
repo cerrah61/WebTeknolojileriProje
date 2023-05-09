@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body
+{
+    background-image: url(foto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: monospace;
+    font-size: x-large;
+}
+.menu-bar
+{
+    background-color:transparent;
+    text-align: center;
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+}
+.menu-bar ul li
+{
+    width: 130px;
+    margin: 15px;
+    padding:15px;
+}
+.menu-bar ul li a
+{ 
+    text-decoration: none;
+    color:black;
+}
+.active, .menu-bar ul li:hover 
+{
+    background-color: gray;
+    border-radius: 10px;
+}
+.metin
+{
+    text-align: center;
+}
+.btn-about
+{
+    font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #34b7a7;
+}
