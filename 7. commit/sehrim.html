@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Şehrim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="vendor/owl.carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+  </head>
+
+  <body>
+ <header id="header" class="fixed-top"> <!-- fixed top headerın yukarda sabitlenmesini sağlar-->
+        <div class="container-fluid d-flex justify-content-between
+            align-items-center"> <!--Bu kod parçası, içeriği tam genişlikte yayarak, içerik öğelerini yatayda sağa ve sola kenarlara hizalar ve dikeyde ortalar.-->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="anasayfa.html">Ana Sayfa</a></li>
+                    <li><a href="hakkimda.html">Hakkımda</a></li>
+                    <li><a href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li><a href="ozgecmisim.html">Öz Geçmiş</a></li>
+                    <li class="active"><a href="sehrim.html">Şehrim</a></li>
+                    <li><a href="takim.html">Şehrimin Takımı</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="giris.html">Giriş</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-social-links">
+                <a
+                    href="https://instagram.com/yarenveotesii?igshid=NTc4MTIwNjQ2YQ=="
+                    class="instagram"> <i class="icofont-instagram"></i>
+                </a>
+                <a href="https://github.com/cerrah61" class="github"><i
+                        class="icofont-github"></i></a>
+                <a
+                    href="https://www.linkedin.com/in/yaren-cerrah-9a55a6246/"
+                    class="linkedin"><i class="icofont-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="owl-carousel owl-theme">
+      <div class="item"><h4><a href="#"><img src="resimler/ataturkkosku.jpg"></a></h4></div>
+      <div class="item"><h4><a href="#"><img src="resimler/kale.jpg"></a></h4></div>
+      <div class="item"><h4><a href="#"><img src="resimler/sümela.jpg"></a></h4></div>
+      <div class="item"><h4><a href="#"><img src="resimler/uzungol.jpg"></a></h4></div>
+  </div>
+
+    <script src="owlcarousel/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.js"></script>
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+</script>
+
+  </body>
+</html>
