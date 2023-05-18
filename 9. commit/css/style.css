@@ -1,0 +1,750 @@
+body
+ {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  background: url("../resimler/arkaplan.jpg") top right;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+#header {
+  background: transparent;
+  z-index: 997;
+  padding: 15px 0;
+}
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #888888;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nav-menu > ul > li > a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #34b7a7;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .active > a:before {
+  visibility: visible;
+  width: 25px;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #222222;
+}
+
+.nav-menu .drop-down ul {
+  display: block;
+  position: absolute;
+  left: 28px;
+  top: calc(100% + 30px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.nav-menu .drop-down:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.nav-menu .drop-down li {
+  min-width: 180px;
+  position: relative;
+}
+
+.nav-menu .drop-down ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: #222222;
+}
+
+.nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+  color: #34b7a7;
+}
+
+.nav-menu .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 5px;
+}
+
+.nav-menu .drop-down .drop-down ul {
+  top: 0;
+  left: calc(100% - 30px);
+}
+
+.nav-menu .drop-down .drop-down:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu .drop-down .drop-down > a {
+  padding-right: 35px;
+}
+
+.nav-menu .drop-down .drop-down > a:after {
+  content: "\eaa0";
+  font-family: IcoFont;
+  position: absolute;
+  right: 15px;
+}
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 17px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #34b7a7;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #222222;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: #34b7a7;
+  text-decoration: none;
+}
+
+.mobile-nav .drop-down > a:after {
+  content: "\ea99";
+  font-family: IcoFont;
+  padding-left: 10px;
+  position: absolute;
+  right: 15px;
+}
+
+.mobile-nav .active.drop-down > a:after {
+  content: "\eaa1";
+}
+
+.mobile-nav .drop-down > a {
+  padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+  padding-left: 20px;
+}
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(9, 9, 9, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+
+
+.header-social-links {
+  padding-left: 20px;
+}
+
+.header-social-links a {
+  color: #222222;
+  padding-left: 6px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.header-social-links a:hover {
+  color: #34b7a7;
+}
+
+@media (max-width: 700px) 
+{
+  #ortakisim
+  {
+    text-align: center;
+  }
+  .header-social-links
+   {
+    padding: 0 48px 0 0;
+  }
+  #ortalan
+  {
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+
+  }
+}
+@media screen and (max-width:700px)
+{
+   
+}
+.box
+{
+  width:800px;
+  height: 850px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  text-align: center;
+  margin:auto;
+  margin-top: 100px;
+  font-family: sans-serif;
+}
+.box img
+{ 
+  width:450px;
+  border-radius: 50%;
+}
+.box h1
+{
+  font-weight: bold;
+}
+.box h5
+{
+  font-size:25px;
+  font-weight: bold;
+}
+.box p
+{
+  font-size: 18px;
+  text-align:justify;
+}
+.box ul
+{
+  margin: 0;
+  padding:0;
+
+}
+.box li
+{
+  display: inline-block;
+  list-style: none;
+  font-size: xx-large;
+  margin:6px;
+}
+.box1
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: 100px;
+  margin-left: 15px;
+  font-family: sans-serif;
+}
+.box1 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box1 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box2
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: -450px;
+  margin-left: 653px;
+  font-family: sans-serif;
+}
+.box2 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box2 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box3
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: -450px;
+  margin-left: 1291px;
+  font-family: sans-serif;
+}
+.box3 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box3 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box4
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: 60px;
+  margin-left: 15px;
+  font-family: sans-serif;
+}
+.box4 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box4 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box4 p
+{
+  font-family: sans-serif;
+}
+.box5
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: -450px;
+  margin-left: 652px;
+  font-family: sans-serif;
+}
+.box5 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box5 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box6
+{
+  width:600px;
+  height: 450px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding:40px;
+  margin-top: -450px;
+  margin-left: 1290px;
+  font-family: sans-serif;
+}
+.box6 h1
+{
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.box6 img
+{
+  width: 150px;
+  height: 150px;
+  margin-left: 183px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+.box7
+{
+  height: 20px;
+  width: 800px;
+  background-color: rgba(23, 107, 100, 0.474);
+  padding: 22.7%;
+  margin-top: 5%;
+  margin-left: 41%;
+}
+.box7 h1
+{
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align:left;
+  margin-left: -400px;
+  margin-top: -400px;
+}
+.box7 h2
+{
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align:left;
+  margin-left: -400px;
+  margin-top: 0px;
+}
+.box7 ul li
+{
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-left: -400px;
+}
+.box8
+{
+  width: 20%;
+  height: 865px;
+  background-color: rgba(58, 35, 11, 0.738);
+  margin-top: -45.4%;
+  margin-left: 20.9%;
+}
+.box8 img
+{
+  border-radius: 50%;
+  height: 30%;
+  margin-left: 18%;
+}
+.box8 h3
+{
+  text-align: center;
+  color:black;
+}
+.box8 h4
+{
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  color:black;
+}
+.owl-carousel .item h4 a img
+{
+  width: 45%;
+  margin-top: 5%;
+  margin-left: 28%
+}
+.sehrimdiv
+{
+  width: 1600px;
+  height: 1120px;
+  background-color:rgba(194, 166, 130, 0.575);
+  margin-left: 8%;
+}
+.sehrimdiv h1
+{
+  font-family:sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.sehrimdiv h2
+{
+  font-family:sans-serif;
+  font-weight: bold;
+  margin-left: 1%;
+}
+.sehrimdiv p
+{
+  margin-left: 1%;
+  font-family: sans-serif;
+  text-indent:30px;
+}
+.kosk
+{
+  width: 795px;
+  height: 750px;
+  background-color: rgba(100, 147, 86, 0.663);
+  margin-top: 1%;
+  margin-left: 8%;
+  border-radius: 5%;
+}
+.kosk h1
+{
+  font-family:sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.kosk img
+{
+  width: 80%;
+  margin-left: 9.5%;
+}
+.kosk p
+{
+  margin-left: 1%;
+  font-family: sans-serif;
+  text-indent:30px;
+}
+.kale
+{
+  width: 795px;
+  height: 750px;
+  background-color: rgba(100, 147, 86, 0.663);
+  margin-left: 51%;
+  margin-top: -39.42%;
+  border-radius: 5%;
+}
+.kale h1
+{
+  font-family:sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.kale img
+{
+  width: 80%;
+  margin-left: 10%;
+}
+.kale p
+{
+  margin-left: 1%;
+  font-family: sans-serif;
+  text-indent:30px;
+}
+.sumela
+{
+  width: 795px;
+  height: 750px;
+  background-color: rgba(100, 147, 86, 0.663);
+  margin-left: 8%;
+  margin-top: 1%;
+  border-radius: 5%;
+}
+.sumela h1
+{
+  font-family:sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+.sumela img
+{
+  width: 80%;
+  margin-left: 10%;
+}
+.sumela p
+{
+  margin-left: 1%;
+  font-family: sans-serif;
+  text-indent:30px;
+}
+.uzungol
+{
+  width: 795px;
+  height: 750px;
+  background-color: rgba(100, 147, 86, 0.663);
+  margin-left: 51%;
+  margin-top: -39.42%;
+  border-radius: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container
+{
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+
+a {
+  color: #34b7a7;
+}
+
+a:hover {
+  color: #51cdbe;
+  text-decoration: none;
+}
+
+
+#ortakisim 
+{
+  width: 100%;
+  height: 100vh;
+  background: url("../resimler/arkaplan.jpg") top right;
+  background-size: cover;
+}
+
+
+#ortakisim h1
+ {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #222222;
+}
+
+#ortakisim h2
+ {
+  color: #6f6f6f;
+  margin: 10px 0 0 0;
+  font-size: 22px;
+}
+
+#ortakisim .btn-about
+ {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #34b7a7;
+}
+
+#ortakisim .btn-about:hover
+ {
+  background: #3dc8b7;
+}
+
+#hobiler
+{
+  width: 100%;
+  height: 100vh;
+  background-color:#3c6f5da7;
+}
+#basketbol h1
+{
+  position: relative;
+  top: 80px;
+  left: 40px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 55px;
+  font-weight: 550;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
